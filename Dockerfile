@@ -5,6 +5,9 @@ WORKDIR '/app'
 COPY package.json .
 RUN npm install
 COPY . .
-CMD ["npm","build"]
+RUN npm build
 
-# Run Phase
+# /app/build => all the informations we will need
+
+
+
