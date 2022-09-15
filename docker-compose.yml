@@ -9,3 +9,11 @@ services:
     volumes:
       - "/home/node/app/node_modules"
       - .:/app" # current folder outside the container to app folder inside the container
+  tests:
+    build:
+      context: . #Where we want the files and folders from this image to be pulled from, if nested, specify the folder#
+      dockerfile: Dockerfile.dev
+    volumes:
+      - "/home/node/app/node_modules"
+      - .:/app"
+    command: [ "npm", "test" ]       
