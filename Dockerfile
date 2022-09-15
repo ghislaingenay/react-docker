@@ -9,5 +9,9 @@ RUN npm build
 
 # /app/build => all the informations we will need
 
+FROM nginx
+COPY --from=builder /app/build /usr/share/nginx/html 
+# nginx documents
+#nginx base image is launched directly
 
 
