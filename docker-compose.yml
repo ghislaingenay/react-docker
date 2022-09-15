@@ -1,7 +1,9 @@
 version: "3"
 services:
   react-app:
-    build: .
+    build:
+      context: . #Where we want the files and folders from this image to be pulled from, if nested, specify the folder#
+      dockerfile: Dockerfile.dev
     ports:
       - "3000:3000"
     volumes:
